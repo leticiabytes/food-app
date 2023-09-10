@@ -22,7 +22,7 @@ export function Categories({
     >
       {categories.map((item: ICategory) => {
         let activeButtonClass =
-          activeCategory === item.id ? " bg-amber-500" : " bg-black/10";
+          activeCategory === item.id ? " bg-orange-500" : " bg-black/10";
         return (
           <TouchableOpacity
             delayPressOut={0.1}

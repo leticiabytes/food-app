@@ -26,7 +26,7 @@ export function AddOn({ name, price, image }: Props) {
           >
             <View className="w-6 h-6 border-2 border-gray-500 justify-center items-center rounded-full">
               {selected && (
-                <View className="w-3 h-3 bg-amber-500 rounded-full" />
+                <View className="w-3 h-3 bg-orange-500 rounded-full" />
               )}
             </View>
           </TouchableOpacity>

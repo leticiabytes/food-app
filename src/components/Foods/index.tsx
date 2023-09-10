@@ -59,7 +59,7 @@ const FoodCard = ({ item, index }: FoodCardProps) => {
           className="bg-black/5"
         />
         <View className="absolute bg-white/90 rounded-full p-2 mt-2 right-2">
-          <Text className="text-amber-500 font-bold">$ {item.price}</Text>
+          <Text className="text-orange-500 font-bold">$ {item.price}</Text>
         </View>
       </View>
       <View className="mt-1 mb-2">

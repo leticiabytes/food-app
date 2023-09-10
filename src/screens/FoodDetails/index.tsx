@@ -85,33 +85,33 @@ export default function FoodDetails(props: NativeStackScreenProps<any, any>) {
             </Text>
 
             <View className="flex-row items-center gap-x-2">
-              <StarIcon size={20} color="#FFC529" />
+              <StarIcon size={20} color="#f97316" />
 
               <View className="flex-row">
                 <Text className="font-bold">4.5</Text>
                 <Text className="text-neutral-400 ml-2">(30+)</Text>
-                <Text className="text-amber-500 ml-2 text underline">
+                <Text className="text-orange-500 ml-2 text underline">
                   See Review
                 </Text>
               </View>
             </View>
 
             <View className="pt-2 flex-row justify-between">
-              <Text className="font-bold text-2xl text-amber-500">
+              <Text className="font-bold text-2xl text-orange-500">
                 $ {item.price}
               </Text>
 
               <View className="flex-row gap-x-4 items-center">
                 <TouchableOpacity
                   onPress={() => setCountUnit(countUnit - 1)}
-                  className="p-2 rounded-full border-2 border-amber-500 bg-white"
+                  className="p-2 rounded-full border-2 border-orange-500 bg-white"
                 >
-                  <MinusIcon size={18} color="#FFC529" strokeWidth={4} />
+                  <MinusIcon size={18} color="#f97316" strokeWidth={4} />
                 </TouchableOpacity>
                 <Text className="text-2xl">{countUnit}</Text>
                 <TouchableOpacity
                   onPress={() => setCountUnit(countUnit + 1)}
-                  className="p-2 rounded-full bg-amber-500"
+                  className="p-2 rounded-full bg-orange-500"
                 >
                   <PlusIcon size={18} color="white" strokeWidth={4} />
                 </TouchableOpacity>
@@ -135,9 +135,9 @@ export default function FoodDetails(props: NativeStackScreenProps<any, any>) {
 
       <View className="bottom-8 justify-center">
         <View className="justify-center flex-row">
-          <View className="w-[167px] flex-row items-center rounded-full bg-amber-500 p-[6px]">
+          <View className="w-[167px] flex-row items-center rounded-full bg-orange-500 p-[6px]">
             <View className="bg-white rounded-full p-3">
-              <ShoppingBagIcon size={18} color="#FFC529" />
+              <ShoppingBagIcon size={18} color="#f97316" />
             </View>
             <Text className="mb-1 text-white font-bold px-3 tracking-wider">
               Add to Cart

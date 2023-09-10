@@ -69,7 +69,7 @@ export default function Home() {
               </Text>
               <ChevronDownIcon size={14} color="gray" />
             </View>
-            <Text className=" text-amber-500">4026 Pretty View Lane</Text>
+            <Text className=" text-orange-500">4026 Pretty View Lane</Text>
           </View>
           <BellIcon size={28} color="gray" />
         </View>
@@ -79,7 +79,7 @@ export default function Home() {
           <View>
             <Text className="font-semibold text-neutral-600 text-2xl">
               What would you like to{" "}
-              <Text className="text-amber-500">order</Text> today?
+              <Text className="text-orange-500">order</Text> today?
             </Text>
           </View>
         </View>
