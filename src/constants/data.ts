@@ -46,7 +46,7 @@ export const data: IData = {
         {
           id: 105,
           name: "Doble Meat Burger",
-          price: 8.99,
+          price: 8.98,
           description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
           image:
@@ -55,7 +55,7 @@ export const data: IData = {
         {
           id: 106,
           name: "Cream Cheese Burger",
-          price: 8.99,
+          price: 8.98,
           description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
           image:
@@ -107,7 +107,7 @@ export const data: IData = {
         {
           id: 204,
           name: "Vegetarian",
-          price: 4.99,
+          price: 3.98,
           description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
           image:
