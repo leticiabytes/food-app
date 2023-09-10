@@ -3,15 +3,24 @@ import { useNavigation } from "@react-navigation/native";
 import Animated, { FadeInDown, FadeIn } from "react-native-reanimated";
 
 import { StatusBar } from "expo-status-bar";
-import { ScrollView, Image, View, TouchableOpacity } from "react-native";
+import { ScrollView, Image, View, TouchableOpacity, Text } from "react-native";
 
-import { ChevronLeftIcon, HeartIcon } from "react-native-heroicons/outline";
-import { HeartIcon as HeartIconSolid } from "react-native-heroicons/solid";
+import {
+  ChevronLeftIcon,
+  HeartIcon,
+  MinusIcon,
+  PlusIcon,
+} from "react-native-heroicons/outline";
+import {
+  HeartIcon as HeartIconSolid,
+  StarIcon,
+} from "react-native-heroicons/solid";
 
 export function FoodDetails() {
   const navigation = useNavigation();
 
   const [isFavorite, setIsFavorite] = useState(false);
+  const [countUnit, setCountUnit] = useState(1);
 
   return (
     <ScrollView
@@ -57,6 +66,49 @@ export function FoodDetails() {
           )}
         </TouchableOpacity>
       </Animated.View>
+
+      <View className="flex justify-between space-y-4 pt-3">
+        <Animated.View
+          entering={FadeInDown.duration(700).springify().damping(12)}
+          className="space-y-2"
+        >
+          <Text className="text-3xl font-bold flex-1 text-primary">
+            Buguer Mesh
+          </Text>
+
+          <View className="flex-row items-center gap-x-2">
+            <StarIcon size={20} color="#FFC529" />
+
+            <View className="flex-row">
+              <Text className="font-bold">4.5</Text>
+              <Text className="text-neutral-400 ml-2">(30+)</Text>
+              <Text className="text-amber-500 ml-2 text underline">
+                See Review
+              </Text>
+            </View>
+          </View>
+
+          <View className="pt-2 flex-row justify-between">
+            <Text className="font-bold text-2xl text-amber-500">$ 12.50</Text>
+
+            <View className="flex-row gap-x-4 items-center">
+              <TouchableOpacity
+                onPress={() => setCountUnit(countUnit - 1)}
+                className="p-2 rounded-full border-2 border-amber-500 bg-white"
+              >
+                <MinusIcon size={18} color="#FFC529" />
+              </TouchableOpacity>
+              <Text className="text-2xl">{countUnit}</Text>
+              <TouchableOpacity
+                onPress={() => setCountUnit(countUnit + 1)}
+                className="p-2 rounded-full bg-amber-500"
+              >
+                <PlusIcon size={18} color="white" />
+              </TouchableOpacity>
+            </View>
+          </View>
+        </Animated.View>
+      </View>
     </ScrollView>
   );
 }
