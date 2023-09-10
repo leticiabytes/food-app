@@ -21,7 +21,7 @@ export default function Home() {
         </View>
 
         <View className="mx-4 space-y-1">
-          <Text className="text-neutral-600 text-xl">Hi, John Doe!</Text>
+          <Text className="text-neutral-600 text-xl">Hi, John Doe</Text>
           <View>
             <Text className="font-semibold text-neutral-600 text-2xl">
               What would you like to{" "}
