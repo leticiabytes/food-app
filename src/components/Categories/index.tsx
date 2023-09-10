@@ -1,6 +1,7 @@
 import { ScrollView, View, Text, TouchableOpacity } from "react-native";
 
 import { ICategory } from "../../interfaces/ICategory";
+import { useId } from "react";
 
 type Props = {
   categories: ICategory[];
@@ -26,13 +27,11 @@ export function Categories({
         return (
           <TouchableOpacity
             delayPressOut={0.1}
+            key={item.id}
             className="flex items-center space-y-1"
             onPress={() => handleChangeCategory(item.id)}
           >
-            <View
-              key={item.id}
-              className="flex items-center justify-center space-y-1"
-            >
+            <View className="flex items-center justify-center space-y-1">
               <View
                 className={
                   "items-center justify-center rounded-full p-2 w-12 h-12" +
