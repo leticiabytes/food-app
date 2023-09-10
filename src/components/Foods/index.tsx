@@ -4,12 +4,23 @@ import MasonryList from "@react-native-seoul/masonry-list";
 import { foodData } from "./data";
 
 type FoodProps = {
+  foods: FoodsProps[];
+  categories: CategoriesProps[];
+};
+
+type CategoriesProps = {
   id: number;
-  title: string;
+  name: string;
+};
+
+type FoodsProps = {
+  id: number;
+  name: string;
+  price: number;
   image: string;
 };
 
-export function Foods() {
+export function Foods({ categories, foods }: FoodProps) {
   return (
     <View className="mx-4 space-y-3">
       <Text className="font-semibold text-neutral-600">Recipes</Text>
