@@ -40,6 +40,7 @@ const FoodCard = ({ item, index }: FoodCardProps) => {
 
   return (
     <Pressable
+      key={item.id}
       style={{
         width: "100%",
         paddingLeft: isEven ? 0 : 8,
