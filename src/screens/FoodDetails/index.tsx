@@ -1,8 +1,18 @@
-import { ScrollView, Image, View } from "react-native";
-import { StatusBar } from "expo-status-bar";
+import { useState } from "react";
+import { useNavigation } from "@react-navigation/native";
 import Animated, { FadeInDown, FadeIn } from "react-native-reanimated";
 
+import { StatusBar } from "expo-status-bar";
+import { ScrollView, Image, View, TouchableOpacity } from "react-native";
+
+import { ChevronLeftIcon, HeartIcon } from "react-native-heroicons/outline";
+import { HeartIcon as HeartIconSolid } from "react-native-heroicons/solid";
+
 export function FoodDetails() {
+  const navigation = useNavigation();
+
+  const [isFavorite, setIsFavorite] = useState(false);
+
   return (
     <ScrollView
       className="bg-white flex-1"
@@ -25,6 +35,28 @@ export function FoodDetails() {
           }}
         />
       </View>
+
+      <Animated.View
+        entering={FadeIn.delay(200).duration(1000)}
+        className="w-full absolute flex-row justify-between items-center pt-14 mt-2"
+      >
+        <TouchableOpacity
+          onPress={() => navigation.goBack()}
+          className="p-2 rounded-full ml-8 bg-white"
+        >
+          <ChevronLeftIcon size={28} color="gray" />
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => setIsFavorite(!isFavorite)}
+          className="p-2 rounded-full  bg-white"
+        >
+          {isFavorite ? (
+            <HeartIconSolid size={28} color="red" />
+          ) : (
+            <HeartIcon size={28} color="grey" />
+          )}
+        </TouchableOpacity>
+      </Animated.View>
     </ScrollView>
   );
 }
