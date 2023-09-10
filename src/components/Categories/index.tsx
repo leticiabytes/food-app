@@ -1,11 +1,18 @@
-import { useState } from "react";
-import { ScrollView, View, Image, Text, TouchableOpacity } from "react-native";
+import { ScrollView, View, Text, TouchableOpacity } from "react-native";
 
-import { categoriesData } from "./data";
+import { ICategory } from "../../interfaces/ICategory";
 
-export function Categories() {
-  const [activeCategory, setActiveCategory] = useState(-1);
+type Props = {
+  categories: ICategory[];
+  activeCategory: number | null;
+  handleChangeCategory: (id: number) => void;
+};
 
+export function Categories({
+  categories,
+  activeCategory,
+  handleChangeCategory,
+}: Props) {
   return (
     <ScrollView
       horizontal
@@ -13,27 +20,27 @@ export function Categories() {
       className="space-x-4"
       contentContainerStyle={{ paddingHorizontal: 15 }}
     >
-      {categoriesData.map((cat, index) => {
+      {categories.map((item: ICategory) => {
         let activeButtonClass =
-          activeCategory === cat.id ? " bg-amber-400" : " bg-black/10";
+          activeCategory === item.id ? " bg-amber-500" : " bg-black/10";
         return (
           <TouchableOpacity
             delayPressOut={0.1}
             className="flex items-center space-y-1"
-            onPress={() => setActiveCategory(cat.id)}
+            onPress={() => handleChangeCategory(item.id)}
           >
             <View
-              key={index}
+              key={item.id}
               className="flex items-center justify-center space-y-1"
             >
               <View
                 className={"rounded-full p-2 w-12 h-12" + activeButtonClass}
               >
-                <Text className="text-2xl">{cat.image}</Text>
+                <Text className="text-2xl">{item.image}</Text>
               </View>
 
               <Text className="text-neutral-600" style={{}}>
-                {cat.categoryName}
+                {item.name}
               </Text>
               <Text className="text-amber-400"> </Text>
             </View>
