@@ -25,7 +25,7 @@ export default function Welcome() {
       300
     );
 
-    setTimeout(() => navigation.navigate("Home"), 2500);
+    setTimeout(() => navigation.navigate("Home"), 1000);
   }, []);
   return (
     <View className="flex-1 justify-center items-center space-y-10 bg-orange-500">
@@ -47,8 +47,6 @@ export default function Welcome() {
           style={{ padding: ring1padding }}
         >
           <Image
-            // resizeMode="contain"
-
             source={require("../../../assets/images/Pizza.png")}
             style={{ width: 300, height: 300 }}
           />
