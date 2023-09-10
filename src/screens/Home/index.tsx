@@ -15,6 +15,7 @@ import { Foods } from "../../components/Foods";
 import { shuffleArray } from "../../utils/shuffleArray";
 
 import { data } from "../../constants/data";
+import { StatusBar } from "expo-status-bar";
 
 export default function Home() {
   const [activeCategory, setActiveCategory] = useState<number | null>(null);
@@ -53,8 +54,9 @@ export default function Home() {
       <ScrollView
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ paddingBottom: 50 }}
-        className="space-y-6 pt-14"
+        className="space-y-6 pt-4"
       >
+        <StatusBar style="dark" />
         <View className="mx-4 flex-row justify-between items-center">
           <Image
             source={require("../../../assets/images/bighead.png")}
@@ -107,7 +109,7 @@ export default function Home() {
         </View>
 
         <View>
-          <Foods foods={foods} categories={categories} />
+          <Foods foods={foods} />
         </View>
       </ScrollView>
     </View>
