@@ -1,23 +1,12 @@
 import { View, Text, Pressable, Image } from "react-native";
 import MasonryList from "@react-native-seoul/masonry-list";
 
-import { foodData } from "./data";
+import { IFood } from "../../interfaces/IFood";
+import { ICategory } from "../../interfaces/ICategory";
 
 type FoodProps = {
-  foods: FoodsProps[];
-  categories: CategoriesProps[];
-};
-
-type CategoriesProps = {
-  id: number;
-  name: string;
-};
-
-type FoodsProps = {
-  id: number;
-  name: string;
-  price: number;
-  image: string;
+  foods: IFood[];
+  categories: ICategory[];
 };
 
 export function Foods({ categories, foods }: FoodProps) {
@@ -25,7 +14,7 @@ export function Foods({ categories, foods }: FoodProps) {
     <View className="mx-4 space-y-3">
       <Text className="font-semibold text-neutral-600">Recipes</Text>
       <MasonryList
-        data={foodData}
+        data={foods}
         keyExtractor={(item) => item.id}
         numColumns={2}
         showsVerticalScrollIndicator={false}
@@ -59,9 +48,7 @@ const RecipeCard = ({ item, index }: any) => {
       />
       <View className="flex justify-between flex-row mt-1 mb-2">
         <Text className="font-semibold mt-1 text-neutral-600">
-          {item.title.length > 20
-            ? item.title.slice(0, 20) + "..."
-            : item.title}
+          {item.name.length > 20 ? item.name.slice(0, 20) + "..." : item.name}
         </Text>
         <Text className="text-amber-500 mt-1 weight-bold">{item.price}</Text>
       </View>
