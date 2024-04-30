@@ -22,6 +22,7 @@ export function Foods({ foods, categorySelected }: FoodProps) {
     <View className="mx-4 space-y-3">
       <Text className="font-semibold text-neutral-600 text-xl">
         {categorySelected ?? "Foods"}
+        <Text className="font-medium text-neutral-400"> ({foods.length})</Text>
       </Text>
       <MasonryList
         data={foods}
