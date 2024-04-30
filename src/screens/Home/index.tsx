@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
 import { View, ScrollView, Text, Image, TextInput } from "react-native";
+import { StatusBar } from "expo-status-bar";
+import Constants from "expo-constants";
+
 import {
   AdjustmentsHorizontalIcon,
   BellIcon,
@@ -15,7 +18,6 @@ import { Foods } from "../../components/Foods";
 import { shuffleArray } from "../../utils/shuffleArray";
 
 import { data } from "../../constants/data";
-import { StatusBar } from "expo-status-bar";
 
 export default function Home() {
   const [activeCategory, setActiveCategory] = useState<number | null>(null);
@@ -53,7 +55,7 @@ export default function Home() {
     <View>
       <ScrollView
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{ paddingBottom: 50 }}
+        contentContainerStyle={{ paddingVertical: Constants.statusBarHeight }}
         className="space-y-6 pt-4"
       >
         <StatusBar style="dark" />
