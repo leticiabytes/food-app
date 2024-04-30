@@ -44,6 +44,10 @@ export default function Home() {
   };
 
   const handleChangeCategory = (idCategory: number | null) => {
+    if (activeCategory === idCategory) {
+      return setFoodsByCategory(null);
+    }
+
     setFoodsByCategory(idCategory);
   };
 
