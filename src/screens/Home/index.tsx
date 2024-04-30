@@ -60,8 +60,6 @@ export default function Home() {
     setFoodsByCategory(null);
   }, []);
 
-  console.log(categorySelectedName);
-
   return (
     <View>
       <ScrollView
