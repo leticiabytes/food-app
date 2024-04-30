@@ -9,6 +9,7 @@ import { IFood } from "../../interfaces/IFood";
 
 type FoodProps = {
   foods: IFood[];
+  categorySelected: string | null;
 };
 
 type FoodCardProps = {
@@ -16,10 +17,12 @@ type FoodCardProps = {
   index: number;
 };
 
-export function Foods({ foods }: FoodProps) {
+export function Foods({ foods, categorySelected }: FoodProps) {
   return (
     <View className="mx-4 space-y-3">
-      <Text className="font-semibold text-neutral-600 text-xl">Foods</Text>
+      <Text className="font-semibold text-neutral-600 text-xl">
+        {categorySelected ?? "Foods"}
+      </Text>
       <MasonryList
         data={foods}
         keyExtractor={(item) => item.id}

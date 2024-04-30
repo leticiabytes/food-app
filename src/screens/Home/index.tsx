@@ -21,6 +21,9 @@ import { data } from "../../constants/data";
 
 export default function Home() {
   const [activeCategory, setActiveCategory] = useState<number | null>(null);
+  const [categorySelectedName, setCategorySelectedName] = useState<
+    string | null
+  >(null);
   const [foods, setFoods] = useState<Food[]>([]);
   const { categories } = data;
 
@@ -38,22 +41,26 @@ export default function Home() {
 
       if (selectedCategory) {
         setFoods(selectedCategory.foods);
+        setCategorySelectedName(selectedCategory.name);
       }
     }
     setActiveCategory(categoryId);
   };
 
   const handleChangeCategory = (idCategory: number | null) => {
-    if (activeCategory === idCategory) {
-      return setFoodsByCategory(null);
+    if (activeCategory !== idCategory) {
+      return setFoodsByCategory(idCategory);
     }
 
-    setFoodsByCategory(idCategory);
+    setFoodsByCategory(null);
+    setCategorySelectedName(null);
   };
 
   useEffect(() => {
     setFoodsByCategory(null);
   }, []);
+
+  console.log(categorySelectedName);
 
   return (
     <View>
@@ -115,7 +122,7 @@ export default function Home() {
         </View>
 
         <View>
-          <Foods foods={foods} />
+          <Foods foods={foods} categorySelected={categorySelectedName} />
         </View>
       </ScrollView>
     </View>
